@@ -88,6 +88,15 @@ class FormBase(object):
                 self.widgets += widgets
 
 
+class Form(FormBase, zope.formlib.form.Form):
+    """Edit form base."""
+
+    def _get_widgets(self, form_fields, ignore_request):
+        return zope.formlib.form.setUpWidgets(
+            form_fields, self.prefix, self.context, self.request,
+            adapters=self.adapters, ignore_request=ignore_request)
+
+
 class AddForm(FormBase, zope.formlib.form.AddForm):
     """Add form base."""
 
@@ -95,7 +104,6 @@ class AddForm(FormBase, zope.formlib.form.AddForm):
         return zope.formlib.form.setUpInputWidgets(
             form_fields, self.prefix, self.context, self.request,
             ignore_request=ignore_request)
-
 
 class EditForm(FormBase, zope.formlib.form.EditForm):
     """Edit form base."""
