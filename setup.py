@@ -12,7 +12,7 @@ setup(
     version = "0.1",
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
-    description = "Provides some extened form layout for zope.formlib",
+    description = "Extensions for zope.formlib",
     long_description = file(os.path.join(os.path.dirname(__file__),
                                          'README.txt')).read(),
     license = "ZPL 2.1",
@@ -32,11 +32,10 @@ setup(
         'zope.formlib',
         'zope.app.pagetemplate',
     ],
-    extras_require = {
-        'test': ['zope.testing',
-                 'zope.testbrowser',
-                 'zope.app.testing',
-                 'zope.app.zcmlfiles',
-                ],
-    },
+    extras_require = dict(
+        test=['zope.testing',
+              'zope.testbrowser',
+              'zope.app.testing',
+              'zope.app.zcmlfiles',
+             ])
     )
