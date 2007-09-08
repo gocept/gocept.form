@@ -11,6 +11,8 @@
     template="grouped_form_macros.pt"
     permission="zope.View"
     />
-    
+
+  <adapter factory=".action.render_destructive_action" name="render" />
+
 </configure>
 
