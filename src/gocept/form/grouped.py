@@ -63,6 +63,10 @@ class FormBase(object):
                 remainder_group = group
             else:
                 field_names = group.get_field_names()
+                # Select only form fields that actually exist
+                form_field_names = [x.__name__ for x in self.form_fields]
+                field_names = [x for x in field_names if x in
+                               form_field_names]
                 widgets = self._get_widgets(self.form_fields.select(
                     *field_names), ignore_request)
                 if self.widgets is None:
