@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'gocept.form',
-    version = "0.3.1",
+    version = "0.4",
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Extensions for zope.formlib",
