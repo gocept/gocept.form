@@ -32,4 +32,5 @@ def FunctionalDocFileSuite(*paths, **kw):
 def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(FunctionalDocFileSuite('grouped.txt'))
+    suite.addTest(FunctionalDocFileSuite('destructive-action.txt'))
     return suite

@@ -7,6 +7,15 @@ gocept.form
 Currently it only contains `grouped`.
 
 
+Destructive Actions
+===================
+
+Destructive actions allow marking actions that can potentially cause harm.
+Those actions will be rendered as buttons and - on JavaScript-capable
+platforms - be disabled by default. Additionally a checkbox is rendered that
+allows enabling the corresponding button.
+
+
 Grouped Fields
 ==============
 
@@ -15,6 +24,12 @@ into field sets. The styling is applied only via CSS.
 
 Changes
 =======
+
+0.3
+---
+
+- Added `destructive action` feature.
+
 
 0.2
 ---
