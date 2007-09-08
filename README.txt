@@ -25,6 +25,11 @@ into field sets. The styling is applied only via CSS.
 Changes
 =======
 
+0.4
+---
+
+- Made grouped forms ignore missing fields.
+
 0.3
 ---
 

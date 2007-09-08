@@ -31,11 +31,14 @@ Define an add form:
 ...         gocept.form.grouped.Fields(
 ...             u'Name', ('first_name', 'last_name'), css_class='class-a'),
 ...         gocept.form.grouped.Fields(
-...             u'Address', ('street', 'city'), css_class='class-b'),
+...             u'Address', ('street', 'city', 'nonexisting'), css_class='class-b'),
 ...     ]
 ...
 ...     form_fields = zope.formlib.form.FormFields(IContact)
 ...
+
+Notice: The field 'nonexisting' will not cause an error because nonexisting
+fields are ignored.
 
 Log in a user:
 
