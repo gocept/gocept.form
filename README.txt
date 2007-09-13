@@ -4,9 +4,6 @@ gocept.form
 
 `gocept.form` provides some extended functionality for zope.formlib.
 
-Currently it only contains `grouped`.
-
-
 Destructive Actions
 ===================
 
@@ -24,6 +21,12 @@ into field sets. The styling is applied only via CSS.
 
 Changes
 =======
+
+0.5
+---
+
+- Added small function `applySchemaData` to apply data to an object according
+  to a schema. This is useful in constructors or in add forms.
 
 0.4
 ---
