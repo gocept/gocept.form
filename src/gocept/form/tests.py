@@ -33,4 +33,5 @@ def test_suite():
     suite = unittest.TestSuite()
     suite.addTest(FunctionalDocFileSuite('grouped.txt'))
     suite.addTest(FunctionalDocFileSuite('destructive-action.txt'))
+    suite.addTest(FunctionalDocFileSuite('multiple-constraints.txt'))
     return suite
