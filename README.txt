@@ -2,7 +2,10 @@
 gocept.form
 ===========
 
-`gocept.form` provides some extended functionality for zope.formlib.
+`gocept.form` provides some extended functionality for zope.formlib and
+z3c.form. To use the package with formlib support, require it using
+``gocept.form[formlib]``. To use the package with z3c.form support, require it
+using ``gocept.form[z3cform]``.
 
 Destructive Actions
 ===================
@@ -21,6 +24,14 @@ into field sets. The styling is applied only via CSS.
 
 Changes
 =======
+
+after 0.5
+---------
+
+- IMPORTANT: Usage changed. Please look at the first paragraph of this
+  README.
+
+- Added pagelet support for z3c.form forms (see pagelet.py)
 
 0.5
 ---
