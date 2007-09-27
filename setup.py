@@ -29,13 +29,17 @@ setup(
         'setuptools',
         'zope.interface',
         'zope.component',
-        'zope.formlib',
-        'zope.app.pagetemplate',
     ],
     extras_require = dict(
         test=['zope.testing',
               'zope.testbrowser',
               'zope.app.testing',
               'zope.app.zcmlfiles',
-             ])
+             ],
+        formlib=['zope.formlib',
+                 'zope.app.pagetemplate',
+                ],
+        z3cform=['z3c.form',
+                 'z3c.pagelet'
+                ])
     )
