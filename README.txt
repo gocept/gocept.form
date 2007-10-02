@@ -28,6 +28,8 @@ Changes
 after 0.5
 ---------
 
+- Added locales for gocept.form (i18n for string in gocept_form_macros)
+
 - IMPORTANT: Usage changed. Please look at the first paragraph of this
   README.
 
