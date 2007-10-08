@@ -25,8 +25,8 @@ into field sets. The styling is applied only via CSS.
 Changes
 =======
 
-after 0.5
----------
+0.6
+---
 
 - Added locales for gocept.form (i18n for string in gocept_form_macros)
 
