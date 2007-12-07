@@ -26,8 +26,8 @@ into field sets. The styling is applied only via CSS.
 Changes
 =======
 
-0.7
----
+0.7 (2007-12-07)
+----------------
 
 - Added a *very* simple way of client side javascript validation.
 
