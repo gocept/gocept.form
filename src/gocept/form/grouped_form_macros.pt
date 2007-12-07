@@ -32,6 +32,7 @@
       </div>
 
     </tal:block>
+
   </metal:macro>
 
 </html>

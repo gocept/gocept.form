@@ -31,7 +31,7 @@ def FunctionalDocFileSuite(*paths, **kw):
 
 def test_suite():
     suite = unittest.TestSuite()
-    suite.addTest(FunctionalDocFileSuite('grouped.txt'))
-    suite.addTest(FunctionalDocFileSuite('destructive-action.txt'))
-    suite.addTest(FunctionalDocFileSuite('multiple-constraints.txt'))
+    suite.addTest(FunctionalDocFileSuite(
+        'grouped.txt', 'destructive-action.txt', 'multiple-constraints.txt',
+        'jsvalidation.txt'))
     return suite

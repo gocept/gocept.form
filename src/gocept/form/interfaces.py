@@ -3,7 +3,9 @@
 # $Id$
 
 import zope.interface
+import zope.publisher.interfaces.browser
 import zope.schema
+
 
 class IFieldGroup(zope.interface.Interface):
 
@@ -36,3 +38,15 @@ class IGroupedForm(zope.interface.Interface):
     field_groups = zope.schema.List(
         title=u"Field groups to display",
         value_type=zope.schema.Object(IFieldGroup))
+
+
+class IJSValidationLayer(zope.publisher.interfaces.browser.IBrowserRequest):
+    """Layer for default javascript validation functions."""
+
+
+class IJSValidator(zope.interface.Interface):
+    """A javascript validation adapter.
+
+    XXX
+
+    """
