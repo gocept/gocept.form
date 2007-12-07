@@ -22,8 +22,14 @@ Grouped Fields
 gocept.form.grouped provides a very low-tech way of grouping schema fields
 into field sets. The styling is applied only via CSS.
 
+
 Changes
 =======
+
+0.7
+---
+
+- Added a *very* simple way of client side javascript validation.
 
 0.6
 ---

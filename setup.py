@@ -9,7 +9,7 @@ from setuptools import setup, find_packages
 
 setup(
     name = 'gocept.form',
-    version = "0.6",
+    version = "0.7dev",
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Extensions for zope.formlib",
@@ -27,8 +27,12 @@ setup(
     namespace_packages = ['gocept'],
     install_requires = [
         'setuptools',
+        'gocept.mochikit>=1.3.1',
         'zope.interface',
         'zope.component',
+        'zope.contentprovider',
+        'zope.viewlet',
+        'zc.resourcelibrary',
     ],
     extras_require = dict(
         test=['zope.testing',
