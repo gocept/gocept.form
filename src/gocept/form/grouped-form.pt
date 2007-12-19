@@ -27,7 +27,8 @@
           </ul>
         </div>
 
-        <div tal:define="groups view/field_groups">
+        <div class="field-group"
+          tal:define="groups view/field_groups">
           <fieldset tal:repeat="group groups"
             tal:attributes="class group/css_class">
             <legend tal:content="group/title">Kopf</legend>

@@ -29,6 +29,11 @@ Changes
 0.8 (unreleased)
 ----------------
 
+0.7.1 (2007-12-19)
+------------------
+
+- Added a css class for the field groups (field-group).
+
 
 0.7 (2007-12-07)
 ----------------
