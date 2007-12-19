@@ -26,9 +26,6 @@ into field sets. The styling is applied only via CSS.
 Changes
 =======
 
-0.8 (unreleased)
-----------------
-
 0.7.1 (2007-12-19)
 ------------------
 
