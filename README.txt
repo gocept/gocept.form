@@ -26,8 +26,13 @@ into field sets. The styling is applied only via CSS.
 Changes
 =======
 
-0.8 (unreleased)
-----------------
+
+0.7.2 (unreleased)
+------------------
+
+- Fixed a bug which prevented the automatic gerneration of remaining fields if
+  `field_groups` was a tuple.
+
 
 0.7.1 (2007-12-19)
 ------------------
