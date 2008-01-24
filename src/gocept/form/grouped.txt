@@ -27,12 +27,12 @@ Define an add form:
 >>> import gocept.form.grouped
 >>> class AddForm(gocept.form.grouped.AddForm):
 ...
-...     field_groups = [
+...     field_groups = (
 ...         gocept.form.grouped.Fields(
 ...             u'Name', ('first_name', 'last_name'), css_class='class-a'),
 ...         gocept.form.grouped.Fields(
 ...             u'Address', ('street', 'city', 'nonexisting'), css_class='class-b'),
-...     ]
+...     )
 ...
 ...     form_fields = zope.formlib.form.FormFields(IContact)
 ...
