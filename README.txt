@@ -27,7 +27,7 @@ Changes
 =======
 
 
-0.7.2 (unreleased)
+0.7.2 (2008-01-24)
 ------------------
 
 - Fixed a bug which prevented the automatic gerneration of remaining fields if
