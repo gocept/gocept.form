@@ -39,6 +39,7 @@ setup(
               'zope.testbrowser',
               'zope.app.testing',
               'zope.app.zcmlfiles',
+              'zope.viewlet!=3.4.1',
              ],
         formlib=['zope.formlib',
                  'zope.app.pagetemplate',
