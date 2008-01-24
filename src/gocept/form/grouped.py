@@ -83,7 +83,8 @@ class FormBase(object):
         if remaining_fields:
             if remainder_group is None:
                 remainder_group = RemainingFields(u'')
-                self.field_groups.append(remainder_group)
+                self.field_groups = tuple(self.field_groups) + (
+                    remainder_group,)
             widgets = self._get_widgets(remaining_fields, ignore_request)
             remainder_group.widgets = widgets
             if self.widgets is None:
