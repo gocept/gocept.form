@@ -23,8 +23,18 @@ gocept.form.grouped provides a very low-tech way of grouping schema fields
 into field sets. The styling is applied only via CSS.
 
 
+Base Add and Edit forms
+=======================
+gocept.form.base.Add and gocept.form.base.Edit providing some common code
+to make implementing basic forms more convenient.
+
 Changes
 =======
+
+0.7.3 (2008-03-27)
+------------------
+
+- Added Base Add and Edit forms
 
 
 0.7.2 (2008-01-24)
