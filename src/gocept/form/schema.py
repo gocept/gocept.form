@@ -5,14 +5,17 @@
 import zope.schema.interfaces
 
 
-def applySchemaData(context, schema, data, omit=()):
-    """Apply `data` to `context` using `schema`."""
+def applySchemaData(context, schema, data, omit=(), set_defaults=True):
+    _marker = object()
     omit = set(omit)
-    for name in schema:
+    for name in schema.names(all=True):
         if name in omit:
             continue
         field = schema[name]
         if not zope.schema.interfaces.IField.providedBy(field):
             continue
-        value = data.get(name, field.default)
-        setattr(context, name, value)
+        value = data.get(name, _marker)
+        if value is _marker and set_defaults:
+            value = field.default
+        if value is not _marker:
+            setattr(context, name, value)
