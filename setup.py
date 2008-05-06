@@ -40,6 +40,7 @@ setup(
               'zope.app.testing',
               'zope.app.zcmlfiles',
               'zope.viewlet!=3.4.1',
+               'z3c.pagelet',
              ],
         formlib=['zope.formlib',
                  'zope.app.pagetemplate',
