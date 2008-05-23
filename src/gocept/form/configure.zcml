@@ -16,6 +16,7 @@
     />
 
   <adapter factory=".action.render_destructive_action" name="render" />
+  <adapter factory=".action.render_confirm_action" name="render" />
 
 </configure>
 

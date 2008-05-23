@@ -31,6 +31,11 @@ to make implementing basic forms more convenient.
 Changes
 =======
 
+0.7.4 (2008-05-23)
+------------------
+
+- Added a javascript confirm action.
+
 0.7.3 (2008-03-27)
 ------------------
 
