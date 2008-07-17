@@ -31,6 +31,12 @@ to make implementing basic forms more convenient.
 Changes
 =======
 
+0.7.5 (2008-07-17)
+------------------
+
+- Fixed a bug the grouped forms: The widgets were stored on a class variable
+  and thus shared in different threads.
+
 0.7.4 (2008-05-23)
 ------------------
 

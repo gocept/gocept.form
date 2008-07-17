@@ -20,6 +20,9 @@ class Fields(object):
 
     zope.interface.implements(gocept.form.interfaces.IFieldGroup)
 
+    # Use slots to make sure that nothing sets anything else on the group.
+    __slots__ = ('title', 'fields', 'css_class')
+
     def __init__(self, title, fields, css_class=None):
         self.title = title
         self.fields = fields
@@ -32,6 +35,8 @@ class Fields(object):
 class RemainingFields(object):
 
     zope.interface.implements(gocept.form.interfaces.IRemainingFields)
+
+    __slots__ = ('title', 'css_class')
 
     def __init__(self, title, css_class=None):
         self.title = title
@@ -51,6 +56,7 @@ class FormBase(object):
     def setUpWidgets(self, ignore_request=False):
         self.adapters = {}
         self.widgets = None
+        self.widget_groups = []
         remainder_group = None
         fields = []
         if self.field_groups is None:
@@ -75,7 +81,9 @@ class FormBase(object):
                     self.widgets += widgets
                 fields.extend(field_names)
 
-            group.widgets = widgets
+            self.widget_groups.append(dict(
+                meta=group,
+                widgets=widgets))
 
         # we create a default widget_group which puts all the rest of the
         # fields in one group
@@ -86,7 +94,9 @@ class FormBase(object):
                 self.field_groups = tuple(self.field_groups) + (
                     remainder_group,)
             widgets = self._get_widgets(remaining_fields, ignore_request)
-            remainder_group.widgets = widgets
+            self.widget_groups.append(dict(
+                meta=remainder_group,
+                widgets=widgets))
             if self.widgets is None:
                 self.widgets = widgets
             else:
