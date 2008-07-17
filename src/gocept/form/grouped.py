@@ -62,11 +62,12 @@ class FormBase(object):
         if self.field_groups is None:
             self.field_groups = []
 
-        for group in self.field_groups:
+        remainder_id = None
+        for id, group in enumerate(self.field_groups):
 
             if gocept.form.interfaces.IRemainingFields.providedBy(group):
                 widgets = None
-                remainder_group = group
+                remainder_id = id
             else:
                 field_names = group.get_field_names()
                 # Select only form fields that actually exist
@@ -81,22 +82,31 @@ class FormBase(object):
                     self.widgets += widgets
                 fields.extend(field_names)
 
-            self.widget_groups.append(dict(
-                meta=group,
-                widgets=widgets))
+                self.widget_groups.append(dict(
+                    meta=group,
+                    widgets=widgets))
 
         # we create a default widget_group which puts all the rest of the
         # fields in one group
         remaining_fields = self.form_fields.omit(*fields)
         if remaining_fields:
-            if remainder_group is None:
+            widgets = self._get_widgets(remaining_fields, ignore_request)
+            if remainder_id is None:
                 remainder_group = RemainingFields(u'')
                 self.field_groups = tuple(self.field_groups) + (
                     remainder_group,)
-            widgets = self._get_widgets(remaining_fields, ignore_request)
-            self.widget_groups.append(dict(
+            else:
+                remainder_group = self.field_groups[remainder_id]
+
+            remainders = dict(
                 meta=remainder_group,
-                widgets=widgets))
+                widgets=widgets)
+
+            if remainder_id is None:
+                self.widget_groups.append(remainders)
+            else:
+                self.widget_groups[remainder_id:remainder_id] = [remainders]
+
             if self.widgets is None:
                 self.widgets = widgets
             else:
