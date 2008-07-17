@@ -84,4 +84,38 @@ And render it:
     </fieldset>
     ...
 
+
+Make sure the sort order is stable even when RemainingFields are used:
+
+>>> class AddForm(gocept.form.grouped.AddForm):
+...
+...     field_groups = (
+...         gocept.form.grouped.RemainingFields(
+...             u'Name', css_class='class-a'),
+...         gocept.form.grouped.Fields(
+...             u'Address', ('street', 'city', 'nonexisting'), css_class='class-b'),
+...     )
+...
+...     form_fields = zope.formlib.form.FormFields(IContact)
+...
+>>> form = AddForm(object(), request)
+>>> form.setUpWidgets()
+
+The groups are in the right order:
+
+>>> import pprint
+>>> pprint.pprint(form.widget_groups)
+[{'meta': <gocept.form.grouped.RemainingFields object at 0x...>,
+  'widgets': <zope.formlib.form.Widgets object at 0x...>},
+ {'meta': <gocept.form.grouped.Fields object at 0x...>,
+  'widgets': <zope.formlib.form.Widgets object at 0x...>}]
+
+The remaining group has the right widgets:
+
+>>> [w.name for w in form.widget_groups[0]['widgets']]
+['form.first_name', 'form.last_name', 'form.birth_date']
+>>> [w.name for w in form.widget_groups[1]['widgets']]
+['form.street', 'form.city']
+
+
 >>> zope.security.management.endInteraction()
