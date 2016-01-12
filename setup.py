@@ -1,7 +1,3 @@
-# Copyright (c) 2007 gocept gmbh & co. kg
-# See also LICENSE.txt
-# $Id$
-
 import os.path
 
 from setuptools import setup, find_packages
@@ -35,16 +31,17 @@ setup(
         'zc.resourcelibrary',
     ],
     extras_require = dict(
-        test=['zope.testing',
+        test=[
               'zope.testbrowser',
               'zope.app.testing',
               'zope.app.zcmlfiles',
               'zope.viewlet!=3.4.1',
                'z3c.pagelet',
              ],
-        formlib=['zope.formlib',
-                 'zope.app.pagetemplate',
-                ],
+        formlib=[
+            'zope.browserpage',
+            'zope.formlib',
+        ],
         z3cform=['z3c.form',
                  'z3c.pagelet'
                 ])
