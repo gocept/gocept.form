@@ -28,8 +28,15 @@ Base Add and Edit forms
 gocept.form.base.Add and gocept.form.base.Edit providing some common code
 to make implementing basic forms more convenient.
 
+
 Changes
 =======
+
+0.8.0 (unreleased)
+------------------
+
+- Got rid of dependencies on zope.app.pagetemplate (in favour of
+  zope.browserpage) and zope.testing (in favour of the standard lib).
 
 0.7.6 (2008-07-17)
 ------------------

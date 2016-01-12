@@ -1,18 +1,11 @@
-# Copyright (c) 2007-2008 gocept gmbh & co. kg
-# See also LICENSE.txt
-# $Id$
-
-import zope.formlib.namedtemplate
-import zope.formlib.interfaces
-import zope.formlib.form
-
-import zope.app.pagetemplate
-
 import gocept.form.interfaces
+import zope.formlib.form
+import zope.formlib.interfaces
+import zope.formlib.namedtemplate
 
 
 grouped_form_template = zope.formlib.namedtemplate.NamedTemplateImplementation(
-    zope.app.pagetemplate.ViewPageTemplateFile('grouped-form.pt'),
+    zope.browserpage.ViewPageTemplateFile('grouped-form.pt'),
     zope.formlib.interfaces.IPageForm)
 
 
