@@ -9,8 +9,9 @@ setup(
     author = "Christian Zagrodnick",
     author_email = "cz@gocept.com",
     description = "Extensions for zope.formlib",
-    long_description = file(os.path.join(os.path.dirname(__file__),
-                                         'README.txt')).read(),
+    long_description = '\n\n'.join(
+        open(os.path.join(os.path.dirname(__file__), name)).read()
+        for name in ['README.txt', 'CHANGES.txt']),
     license = "ZPL 2.1",
     url='http://pypi.python.org/pypi/gocept.form',
 
